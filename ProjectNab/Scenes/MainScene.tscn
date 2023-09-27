@@ -1,3 +1,16 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://bovxavpev67ry"]
 
 [node name="MainScene" type="Node2D"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://bovxavpev67ry"]
+
+[ext_resource type="PackedScene" uid="uid://b0r0gik664nkm" path="res://Scenes/Player.tscn" id="1_kqnbo"]
+[ext_resource type="PackedScene" uid="uid://bbpij78rxx6ft" path="res://Scenes/Platform.tscn" id="2_md8vo"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_kqnbo")]
+
+[node name="Platform" parent="." instance=ExtResource("2_md8vo")]
+>>>>>>> Stashed changes
