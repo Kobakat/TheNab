@@ -1,3 +1,34 @@
-[gd_scene format=3 uid="uid://bovxavpev67ry"]
+[gd_scene load_steps=5 format=3 uid="uid://bovxavpev67ry"]
+
+[ext_resource type="Texture2D" uid="uid://t0cslfrp5nfv" path="res://icon.svg" id="1_41j1r"]
+[ext_resource type="Script" path="res://Source/PlayerMovement.cs" id="1_qaui6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcnf5"]
+size = Vector2(118, 119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xlxe"]
+size = Vector2(892, 67.5)
 
 [node name="MainScene" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(599, 302)
+script = ExtResource("1_qaui6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_41j1r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_mcnf5")
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(601, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_1xlxe")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+scale = Vector2(6.90086, 0.52)
+texture = ExtResource("1_41j1r")
